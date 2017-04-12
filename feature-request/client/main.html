@@ -5,10 +5,13 @@
 <body>
   <h1>Feature Requests</h1>
 
-  {{> requestform}}
+  {{> requestForm}}
+  {{#each features}}
+    {{> feature}}
+  {{/each}}
 </body>
 
-<template name="requestform">
+<template name="requestForm" id="requestForm">
   <form class="ui form">
     <div class="field">
       <label>Title</label>
@@ -24,47 +27,53 @@
     </div>
     <div class="field">
       <label>Client Priority</label>
-      <input type="text" name="client-priority" placeholder="Client Priority">
+      <input type="text" name="clientPriority" placeholder="Client Priority">
     </div>
     <div class="field">
       <label>Target Date</label>
-      <input type="text" name="target-date" placeholder="Target Date">
+      <input type="text" name="targetDate" placeholder="Target Date">
     </div>
     <div class="field">
       <label>Ticket URL</label>
-      <input type="text" name="ticket-url" placeholder="Ticket URL">
-    </div>
-    <div class="field">
-      <label>Client</label>
-      <input type="text" name="client" placeholder="Client">
+      <input type="text" name="ticketUrl" placeholder="Ticket URL">
     </div>
     <div class="inline fields">
-    <label for="product-area">Select the product area:</label>
-    <div class="field">
-      <div class="ui radio checkbox">
-        <input name="product-area" checked="" tabindex="0" class="hidden" type="radio">
-        <label>Policies</label>
+      <label for="product-area">Select the product area:</label>
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input name="productArea" checked="" tabindex="0" class="hidden" type="radio">
+          <label>Policies</label>
+        </div>
+      </div>
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input name="product-area" tabindex="0" class="hidden" type="radio">
+          <label>Billing</label>
+        </div>
+      </div>
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input name="product-area" tabindex="0" class="hidden" type="radio">
+          <label>Claims</label>
+        </div>
+      </div>
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input name="product-area" tabindex="0" class="hidden" type="radio">
+          <label>Reports</label>
+        </div>
       </div>
     </div>
-    <div class="field">
-      <div class="ui radio checkbox">
-        <input name="product-area" tabindex="0" class="hidden" type="radio">
-        <label>Billing</label>
-      </div>
-    </div>
-    <div class="field">
-      <div class="ui radio checkbox">
-        <input name="product-area" tabindex="0" class="hidden" type="radio">
-        <label>Claims</label>
-      </div>
-    </div>
-    <div class="field">
-      <div class="ui radio checkbox">
-        <input name="product-area" tabindex="0" class="hidden" type="radio">
-        <label>Reports</label>
-      </div>
-    </div>
-  </div>
     <button class="ui button" type="submit">Submit</button>
   </form>
+</template>
+
+<template name="feature">
+  <div>Title: {{title}}</div>
+  <div> Description: {{description}}</div>
+  <div>Client: {{client}}</div>
+  <div>Client Priority: {{clientPriority}}</div>
+  <div>Target Date: {{targetDate}}</div>
+  <div>Ticket URL: {{ticketUrl}}</div>
+  <div>Product Area: {{productArea}}</div>
 </template>
