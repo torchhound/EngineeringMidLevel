@@ -1,0 +1,76 @@
+<head>
+  <title>Feature Requests</title>
+  <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+  <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+  <script src="semantic/dist/semantic.min.js"></script>
+</head>
+
+<body>
+  <h1>Feature Requests</h1>
+
+  {{> requestform}}
+</body>
+
+<template name="requestform">
+  <form class="ui form">
+    <div class="field">
+      <label>Title</label>
+      <input type="text" name="title" placeholder="Title">
+    </div>
+    <div class="field">
+      <label>Description</label>
+      <input type="text" name="description" placeholder="Description">
+    </div>
+    <div class="field">
+      <label>Client</label>
+      <input type="text" name="client" placeholder="Client">
+    </div>
+    <div class="field">
+      <label>Client Priority</label>
+      <input type="text" name="client-priority" placeholder="Client Priority">
+    </div>
+    <div class="field">
+      <label>Target Date</label>
+      <input type="text" name="target-date" placeholder="Target Date">
+    </div>
+    <div class="field">
+      <label>Ticket URL</label>
+      <input type="text" name="ticket-url" placeholder="Ticket URL">
+    </div>
+    <div class="field">
+      <label>Client</label>
+      <input type="text" name="client" placeholder="Client">
+    </div>
+    <div class="inline fields">
+    <label for="product-area">Select the product area:</label>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input name="product-area" checked="" tabindex="0" class="hidden" type="radio">
+        <label>Policies</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input name="product-area" tabindex="0" class="hidden" type="radio">
+        <label>Billing</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input name="product-area" tabindex="0" class="hidden" type="radio">
+        <label>Claims</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input name="product-area" tabindex="0" class="hidden" type="radio">
+        <label>Reports</label>
+      </div>
+    </div>
+  </div>
+    <button class="ui button" type="submit">Submit</button>
+  </form>
+</template>
