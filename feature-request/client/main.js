@@ -9,7 +9,7 @@ Template.requestForm.rendered = function() {
 	this.$('.ui.radio.checkbox').checkbox();
 };
 
-Template.body.helpers({
+Template.body.helpers({ //Template.main?
   features() {
     return Features.find({});
   },

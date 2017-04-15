@@ -11,8 +11,8 @@
   {{/each}}
 </body>
 
-<template name="requestForm" id="requestForm">
-  <form class="ui form">
+<template name="requestForm">
+  <form class="ui form requestForm">
     <div class="field">
       <label>Title</label>
       <input type="text" name="title" placeholder="Title">
@@ -47,19 +47,19 @@
       </div>
       <div class="field">
         <div class="ui radio checkbox">
-          <input name="product-area" tabindex="0" class="hidden" type="radio">
+          <input name="productArea" tabindex="0" class="hidden" type="radio">
           <label>Billing</label>
         </div>
       </div>
       <div class="field">
         <div class="ui radio checkbox">
-          <input name="product-area" tabindex="0" class="hidden" type="radio">
+          <input name="productArea" tabindex="0" class="hidden" type="radio">
           <label>Claims</label>
         </div>
       </div>
       <div class="field">
         <div class="ui radio checkbox">
-          <input name="product-area" tabindex="0" class="hidden" type="radio">
+          <input name="productArea" tabindex="0" class="hidden" type="radio">
           <label>Reports</label>
         </div>
       </div>
