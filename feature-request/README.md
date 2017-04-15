@@ -1,10 +1,12 @@
 # feature-request
 
+[![Build Status](https://travis-ci.org/torchhound/EngineeringMidLevel.svg?branch=master)](https://travis-ci.org/torchhound/EngineeringMidLevel)
+
 ## Features
 
 - [ ] *User Management*. A system that holds client feature requests benefits greatly from user management. Some projects include admin controlled user accounts. Better projects included self enrollment via email. The best projects used a SSO solution like OAuth or SAML.
 
-- [ ] *Client / Project Management*. As a base requirement, you had a fixed list of clients and projects, but the best projects included a simple admin interface associated with the admin login that gives users a basic CRUD interface for these entities.
+- [x] *Client / Project Management*. As a base requirement, you had a fixed list of clients and projects, but the best projects included a simple admin interface associated with the admin login that gives users a basic CRUD interface for these entities.
 
 - [ ] *Filter by Client*. If multiple clients are submitting feature requests, it is important to be able to view the total task list as well as a list filtered by client.
 
@@ -14,13 +16,15 @@
 
 - [ ] *Unit Tests* 
 
-- [ ] *Continuous Integration*
+- [x] *Continuous Integration*
 
 - [ ] *Automated Deployment*
 
 ## Tech Stack
 
 - OS: Ubuntu
+
+- VPS: AWS
 
 - Client/Server Framework: Meteor.js
 

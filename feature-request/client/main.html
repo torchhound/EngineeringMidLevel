@@ -64,7 +64,7 @@
         </div>
       </div>
     </div>
-    <button class="ui button" type="submit">Submit</button>
+    <button class="ui button" type="submit">Submit Feature Request</button>
   </form>
 </template>
 
@@ -76,5 +76,54 @@
   <div>Target Date: {{targetDate}}</div>
   <div>Ticket URL: {{ticketUrl}}</div>
   <div>Product Area: {{productArea}}</div>
+  <form class="ui form updateForm">
+    <div class="ui input">
+      <input placeholder="Title" name="title" type="text">
+    </div>
+    <div class="ui input">
+      <input placeholder="Description" name="description" type="text">
+    </div>
+    <div class="ui input">
+      <input placeholder="Client" name="client" type="text">
+    </div>
+    <div class="ui input">
+      <input placeholder="Client Priority" name="clientPriority" type="text">
+    </div>
+    <div class="ui input">
+      <input placeholder="Target Date" name="targetDate" type="text">
+    </div>
+    <div class="ui input">
+      <input placeholder="Ticket URL" name="ticketUrl" type="text">
+    </div>
+    <div class="inline fields">
+      <label for="product-area">Select the product area:</label>
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input name="productArea" checked="" tabindex="0" class="hidden" type="radio">
+          <label>Policies</label>
+        </div>
+      </div>
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input name="productArea" tabindex="0" class="hidden" type="radio">
+          <label>Billing</label>
+        </div>
+      </div>
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input name="productArea" tabindex="0" class="hidden" type="radio">
+          <label>Claims</label>
+        </div>
+      </div>
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input name="productArea" tabindex="0" class="hidden" type="radio">
+          <label>Reports</label>
+        </div>
+      </div>
+    </div>
+    <button class="ui button" type="submit">Submit Update</button>
+  </form>
   <button class="ui red button delete">Delete</button>
+  <button class="ui blue button update">Update</button>
 </template>

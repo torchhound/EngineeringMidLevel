@@ -5,3 +5,5 @@ node_js:
   - "7"
 services:
   - mongodb
+notifications:
+  email: false
