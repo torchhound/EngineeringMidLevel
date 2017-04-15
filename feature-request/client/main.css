@@ -1,4 +1,8 @@
-.requestform {
+.requestForm {
 	margin-right: 5%;
 	margin-left: 5%;
+}
+
+#requestForm {
+	display: none;
 }

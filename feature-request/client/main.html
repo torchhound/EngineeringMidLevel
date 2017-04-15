@@ -3,8 +3,8 @@
 </head>
 
 <body>
-  <h1>Feature Requests</h1>
-
+  <h1 id="title">Feature Requests</h1>
+  <button class="ui green button create" id="create">Add a New Feature Request</button>
   {{> requestForm}}
   {{#each features}}
     {{> feature}}
@@ -12,7 +12,7 @@
 </body>
 
 <template name="requestForm">
-  <form class="ui form requestForm">
+  <form class="ui form requestForm" id="requestForm">
     <div class="field">
       <label>Title</label>
       <input type="text" name="title" placeholder="Title">
@@ -76,4 +76,5 @@
   <div>Target Date: {{targetDate}}</div>
   <div>Ticket URL: {{ticketUrl}}</div>
   <div>Product Area: {{productArea}}</div>
+  <button class="ui red button delete">Delete</button>
 </template>

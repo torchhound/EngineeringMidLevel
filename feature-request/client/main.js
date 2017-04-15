@@ -9,9 +9,9 @@ Template.requestForm.rendered = function() {
 	this.$('.ui.radio.checkbox').checkbox();
 };
 
-Template.body.helpers({ //Template.main?
+Template.body.helpers({ 
   features() {
-    return Features.find({});
+    return Features.find({}, {sort: {createdAt: -1}});
   },
 });
 
@@ -43,5 +43,20 @@ Template.body.events({
 		target.targetDate.value = '';
 		target.ticketUrl.value = '';
 		//clear productArea?
+		$('#requestForm').hide();
+		$('#create').show();
   	},
+});
+
+Template.body.events({
+	'click .create'() {
+		$('#create').hide();
+		$('#requestForm').show();
+	},
+})
+
+Template.feature.events({
+	'click .delete'() {
+		Features.remove(this._id);
+	},
 });
