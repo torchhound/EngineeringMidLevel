@@ -1,12 +1,13 @@
 .requestForm {
 	margin-right: 5%;
 	margin-left: 5%;
-}
-
-#requestForm {
 	display: none;
 }
 
 .updateForm {
+	display: none;
+}
+
+#cancelRequest {
 	display: none;
 }

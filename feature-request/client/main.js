@@ -8,11 +8,11 @@ import './main.html';
 Template.requestForm.rendered = function() {
 	this.$('.ui.radio.checkbox').checkbox();
 };
-/*
-Template.updateForm.rendered = function() {
+
+Template.feature.rendered = function() {
 	this.$('.ui.radio.checkbox').checkbox();
 };
-*/
+
 Template.body.helpers({ 
   features() {
     return Features.find({}, {sort: {createdAt: -1}});
@@ -47,8 +47,9 @@ Template.body.events({
 		target.targetDate.value = '';
 		target.ticketUrl.value = '';
 		//clear productArea?
-		$('#requestForm').hide();
-		$('#create').show();
+		$('.requestForm').hide();
+		$('.cancelRequest').hide();
+		$('.create').show();
   	},
   	'submit .updateForm'(event) {
   		event.preventDefault();
@@ -95,15 +96,21 @@ Template.body.events({
 		target.clientPriority.value = '';
 		target.targetDate.value = '';
 		target.ticketUrl.value = '';
-		$('.updateForm').hide();
-		$('.update').show();
+		$('#updateForm').hide();
+		$('#update').show();
   	},
 });
 
 Template.body.events({
 	'click .create'() {
-		$('#create').hide();
-		$('#requestForm').show();
+		$('.create').hide();
+		$('.requestForm').show();
+		$('.cancelRequest').show();
+	},
+	'click .cancelRequest'() {
+		$('.requestForm').hide();
+		$('.cancelRequest').hide();
+		$('.create').show();
 	},
 })
 
@@ -112,7 +119,11 @@ Template.feature.events({
 		Features.remove(this._id);
 	},
 	'click .update'() {
-		$('.update').hide();
-		$('.updateForm').show();
-	}
+		$('#update').hide();
+		$('#updateForm').show();
+	},
+	'click .cancelUpdate'() {
+		$('#updateForm').hide();
+		$('#update').show();
+	},
 });

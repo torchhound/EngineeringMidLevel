@@ -12,7 +12,7 @@
 </body>
 
 <template name="requestForm">
-  <form class="ui form requestForm" id="requestForm">
+  <form class="ui form requestForm">
     <div class="field">
       <label>Title</label>
       <input type="text" name="title" placeholder="Title">
@@ -38,34 +38,35 @@
       <input type="text" name="ticketUrl" placeholder="Ticket URL">
     </div>
     <div class="inline fields">
-      <label for="product-area">Select the product area:</label>
+      <label for="productArea">Select the product area:</label>
       <div class="field">
         <div class="ui radio checkbox">
-          <input name="productArea" checked="" tabindex="0" class="hidden" type="radio">
+          <input name="productArea" checked="Policies" tabindex="0" class="hidden" type="radio">
           <label>Policies</label>
         </div>
       </div>
       <div class="field">
         <div class="ui radio checkbox">
-          <input name="productArea" tabindex="0" class="hidden" type="radio">
+          <input name="productArea" checked="Billing" tabindex="0" class="hidden" type="radio">
           <label>Billing</label>
         </div>
       </div>
       <div class="field">
         <div class="ui radio checkbox">
-          <input name="productArea" tabindex="0" class="hidden" type="radio">
+          <input name="productArea" checked="Claims" tabindex="0" class="hidden" type="radio">
           <label>Claims</label>
         </div>
       </div>
       <div class="field">
         <div class="ui radio checkbox">
-          <input name="productArea" tabindex="0" class="hidden" type="radio">
+          <input name="productArea" checked="Reports" tabindex="0" class="hidden" type="radio">
           <label>Reports</label>
         </div>
       </div>
     </div>
     <button class="ui button" type="submit">Submit Feature Request</button>
   </form>
+  <button class="ui red button cancelRequest" id="cancelRequest">Cancel</button>
 </template>
 
 <template name="feature">
@@ -76,7 +77,7 @@
   <div>Target Date: {{targetDate}}</div>
   <div>Ticket URL: {{ticketUrl}}</div>
   <div>Product Area: {{productArea}}</div>
-  <form class="ui form updateForm">
+  <form class="ui form updateForm" id="updateForm">
     <div class="ui input">
       <input placeholder="Title" name="title" type="text">
     </div>
@@ -123,7 +124,8 @@
       </div>
     </div>
     <button class="ui button" type="submit">Submit Update</button>
+    <button class="ui red button" id="cancelUpdate">Cancel</button>
   </form>
   <button class="ui red button delete">Delete</button>
-  <button class="ui blue button update">Update</button>
+  <button class="ui blue button update" id="update">Update</button>
 </template>
