@@ -94,7 +94,7 @@ Template.body.events({
 		target.description.value = '';
 		target.client.value = '';
 		target.clientPriority.value = '';
-		target.targetDate.value = '';
+		target.targetDate.value = ''
 		target.ticketUrl.value = '';
 		$('#updateForm').hide();
 		$('#update').show();
@@ -107,7 +107,8 @@ Template.body.events({
 		$('.requestForm').show();
 		$('.cancelRequest').show();
 	},
-	'click .cancelRequest'() {
+	'click .cancelRequest'(event) {
+    event.preventDefault();
 		$('.requestForm').hide();
 		$('.cancelRequest').hide();
 		$('.create').show();

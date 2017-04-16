@@ -4,11 +4,15 @@
 
 <body>
   <h1 id="title">Feature Requests</h1>
-  <button class="ui green button create" id="create">Add a New Feature Request</button>
-  {{> requestForm}}
-  {{#each features}}
-    {{> feature}}
-  {{/each}}
+  {{#if currentUser}}
+    <button class="ui green button create" id="create">Add a New Feature Request</button>
+    {{> requestForm}}
+    {{#each features}}
+      {{> feature}}
+    {{/each}}
+  {{else}}
+    {{> loginButtons}}
+  {{/if}}
 </body>
 
 <template name="requestForm">
@@ -65,8 +69,9 @@
       </div>
     </div>
     <button class="ui button" type="submit">Submit Feature Request</button>
+    <button class="ui red button cancelRequest" id="cancelRequest">Cancel</button>
   </form>
-  <button class="ui red button cancelRequest" id="cancelRequest">Cancel</button>
+  
 </template>
 
 <template name="feature">
