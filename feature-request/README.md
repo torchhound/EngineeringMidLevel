@@ -4,7 +4,7 @@
 
 ## Features
 
-- [ ] *User Management*. A system that holds client feature requests benefits greatly from user management. Some projects include admin controlled user accounts. Better projects included self enrollment via email. The best projects used a SSO solution like OAuth or SAML.
+- [x] *User Management*. A system that holds client feature requests benefits greatly from user management. Some projects include admin controlled user accounts. Better projects included self enrollment via email. The best projects used a SSO solution like OAuth or SAML.
 
 - [x] *Client / Project Management*. As a base requirement, you had a fixed list of clients and projects, but the best projects included a simple admin interface associated with the admin login that gives users a basic CRUD interface for these entities.
 
