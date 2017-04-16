@@ -17,6 +17,9 @@ Template.body.helpers({
   features() {
     return Features.find({}, {sort: {createdAt: -1}});
   },
+  comments() {
+    return Features.find({}, {fields: {comments: 0}}); //this._id?
+  },
 });
 
 Template.body.events({
@@ -62,6 +65,12 @@ Template.body.events({
 		$('#updateForm').hide();
 		$('#update').show();
   	},
+    'submit .commentForm'(event) {
+      event.preventDefault();
+      const commentText = target.commentText.value;
+      Meteor.call('features.comment', this._id, commentText);
+      target.commentText.value = '';
+    },
 });
 
 Template.body.events({
@@ -90,4 +99,14 @@ Template.feature.events({
 		$('#updateForm').hide();
 		$('#update').show();
 	},
+  'click .discuss'() {
+    $('#commentForm').show();
+    $('#commentsOutput').show();
+    $('#discuss').hide();
+  },
+  'click .cancelComment'() {
+    $('#commentForm').hide();
+    $('#commentsOutput').hide();
+    $('#discuss').show();
+  },
 });

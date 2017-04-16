@@ -9,6 +9,8 @@ Meteor.methods({
 			throw new Meteor.Error('not-authorized');
 		};
 
+		const comments = [];
+
 		Features.insert({
       		title,
       		description,
@@ -17,6 +19,7 @@ Meteor.methods({
       		targetDate,
       		ticketUrl,
       		productArea,
+      		comments,
       		createdAt: new Date(),
       		owner: Meteor.userId(),
     	});
@@ -54,5 +57,10 @@ Meteor.methods({
    				$set: {productArea: productArea},
    			});
    		}
+	},
+	'features.comment'(id, commentText) {
+		Features.update(id, {
+			$push: {comments: {commentText:commentText, author:Meteor.userId()}},
+		});
 	},
 });

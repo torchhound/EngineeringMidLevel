@@ -131,6 +131,24 @@
     <button class="ui button" type="submit">Submit Update</button>
     <button class="ui red button" id="cancelUpdate">Cancel</button>
   </form>
+  <form class="ui form commentForm" id="commentForm">
+    <div class="ui input">
+      <input type="text" name="commentText" placeholder="Say...">
+    </div>
+    <button class="ui button" type="submit">Comment</button>
+    <button class="ui red button" id="cancelComment">Cancel</button>
+  </form>
+  <div id="commentsOutput">
+    {{#each comments}}
+      {{> comment}}
+    {{/each}}
+  </div>
   <button class="ui red button delete">Delete</button>
   <button class="ui blue button update" id="update">Update</button>
+  <button class="ui button discuss" id="discuss">Discuss</button>
+</template>
+
+<template name="comment">
+  <div>{{commentText}}</div>
+  <div>Author: {{author}}</div>
 </template>

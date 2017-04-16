@@ -11,3 +11,11 @@
 #cancelRequest {
 	display: none;
 }
+
+.commentForm {
+	display: none;
+}
+
+#commentsOutput {
+	display: none;
+}
