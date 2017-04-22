@@ -35,3 +35,13 @@
 - CI: Travis CI
 
 - Automated Deployment: Ansible
+
+# Installing and Running for Development
+
+`git clone https://github.com/torchhound/engineeringmidlevel`
+
+`cd engineeringmidlevel/feature-request`
+
+`meteor npm install`
+
+`meteor`
