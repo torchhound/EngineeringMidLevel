@@ -3,6 +3,15 @@ import { Mongo } from 'meteor/mongo';
 
 export const Features = new Mongo.Collection('features');
 
+if (Meteor.isServer) {
+   Meteor.publish('features', function featuresPublication() {
+      return Features.find({});
+   });
+   Meteor.publish('comments', function commentsPublication() {
+      return Features.find({}, {fields: {comments: 0}});
+   })
+};
+
 Meteor.methods({
 	'features.insert'(title, description, client, clientPriority, targetDate, ticketUrl, productArea) {
 		if (! Meteor.userId()) {

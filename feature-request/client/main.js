@@ -3,6 +3,7 @@ import { ReactiveVar } from 'meteor/reactive-var';
 
 import { Features } from '../imports/api/features.js';
 
+import '../imports/api/features.js'
 import './main.html';
 
 Template.requestForm.rendered = function() {
@@ -13,13 +14,18 @@ Template.feature.rendered = function() {
 	this.$('.ui.radio.checkbox').checkbox();
 };
 
-Template.body.helpers({ 
-  features() {
-    return Features.find({}, {sort: {createdAt: -1}});
-  },
-  comments() {
-    return Features.find({}, {fields: {comments: 0}}); //this._id?
-  },
+Template.body.onCreated(function bodyOnCreated() {
+  Meteor.subscribe('features'); 
+});
+
+Template.body.helpers({
+  features: function() {
+    return Features.find({});
+  }
+});
+
+Template.feature.onCreated(function featureOnCreated() {
+  this.subscribe('comments');
 });
 
 Template.body.events({
