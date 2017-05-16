@@ -3,13 +3,22 @@
 </head>
 
 <body>
-  <h1 id="title">Feature Requests</h1>
+  <div class="ui grid">
+    <div class="four column row">
+      <h1 class="left floated column" id="title">Feature Requests</h1>
+      <h1 class="right floated column">{{username.profile.name}}</h1>
+    </div>
+  </div>
   {{#if currentUser}}
     <button class="ui green button create" id="create">Add a New Feature Request</button>
     {{> requestForm}}
-    {{#each features}}
-      {{> feature}}
-    {{/each}}
+    <div class="ui grid">
+      <div class="four wide column">
+        {{#each features}}
+          {{> feature}}
+        {{/each}}
+      </div>
+    </div>
   {{else}}
     {{> loginButtons}}
   {{/if}}

@@ -6,6 +6,8 @@ import { Features } from '../imports/api/features.js';
 import '../imports/api/features.js'
 import './main.html';
 
+const productAreaList = ["Policies", "Billing", "Claims", "Reports"];
+
 Template.requestForm.rendered = function() {
 	this.$('.ui.radio.checkbox').checkbox();
 };
@@ -21,6 +23,9 @@ Template.body.onCreated(function bodyOnCreated() {
 Template.body.helpers({
   features: function() {
     return Features.find({});
+  },
+  username: function() {
+    return Meteor.user();
   }
 });
 
@@ -38,7 +43,12 @@ Template.body.events({
     const clientPriority = target.clientPriority.value;
     const targetDate = target.targetDate.value;
     const ticketUrl = target.ticketUrl.value;
-    const productArea = target.productArea.value;
+    const productArea = [];/*
+    _.each(productAreaList, function setProductArea(area) {
+      if (event.target[productArea].checked) {
+        productArea.push(event.target[productArea].value);
+      }
+    });*/
     Meteor.call('features.insert', title, description, client, clientPriority, targetDate, ticketUrl, productArea);
 		target.title.value = '';
 		target.description.value = '';
